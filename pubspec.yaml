@@ -115,6 +115,10 @@ flutter:
   - ./assets/images/appIcons/medal.png
   - ./assets/images/appIcons/money.png
   - ./assets/images/appIcons/ray.png
+  - ./assets/images/appIcons/search.png
+  - ./assets/images/appIcons/team-1.png
+  - ./assets/images/appIcons/flame.png
+  - ./assets/images/appIcons/daimond.png
 
   # Badges
   - ./assets/images/appIcons/badge-bronze-default.png

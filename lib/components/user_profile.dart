@@ -53,11 +53,11 @@ class UserPhotoAndName extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        person is Children ?
-            isSugestion
-                ? child!.getShield()
-                : StreakWidget(child: person as Children)
-              : const SizedBox(),
+        //person is Children ?
+        //    isSugestion
+        //        ? child!.getShield()
+        //        : StreakWidget(child: person as Children)
+        //      : const SizedBox(),
         if(logout)
           IconButton(
                   onPressed: () =>

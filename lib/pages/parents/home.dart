@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:learn/pages/parents/new_edit_dependent.dart';
 import 'package:learn/utils/fontstyles.dart';
 import 'package:learn/widgets.dart';
 import 'package:learn/components.dart';
 import 'package:learn/classes.dart';
 import 'package:learn/widgets/monitoring/New_Update_Card.dart';
+import 'package:learn/widgets/monitoring/quick_acess_card.dart';
 
 import 'package:provider/provider.dart';
 
@@ -19,6 +21,7 @@ class ParentsHome extends StatelessWidget {
     VolatileParents parent = Provider.of<VolatileParents>(context);
 
     return Scaffold(
+      backgroundColor: const Color(0xFFFFFFFF),
       body: SingleChildScrollView(
         //padding: const EdgeInsets.fromLTRB(16,24,8,0),
         child: Column(
@@ -91,7 +94,7 @@ class ParentsHome extends StatelessWidget {
                   ]),
             ),
             SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(16, 24, 0, 0),
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
@@ -118,6 +121,40 @@ class ParentsHome extends StatelessWidget {
                     icon: 'assets/images/appIcons/ray.png',
                     color: const Color(0xFFFFE061).withOpacity(0.8),
                   ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 48),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Acesso rápido',
+                    style: FontStyles.h5MediumBlack,
+                  ),
+                  const SizedBox(height: 24),
+                  Row(
+                    children: [
+                      QuickAccessCard(
+                        title: 'Adicionar\ndependente',
+                        icon: 'assets/images/appIcons/team-1.png',
+                        color: const Color(0xFFFFFFFF),
+                        borderColor: const Color(0xFFD9D9D9),
+                        onTap: () => {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => AddDependentPage(parent: parent))),
+                        },
+                      ),
+                      const SizedBox(width: 16),
+                      const QuickAccessCard(
+                        title: 'Gerar\nrelatório',
+                        icon: 'assets/images/appIcons/search.png',
+                        color: Color(0xFFFFFFFF),
+                        borderColor: Color(0xFFD9D9D9),
+                        unlocked: false,
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
